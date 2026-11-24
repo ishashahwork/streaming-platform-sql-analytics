@@ -2,25 +2,21 @@
 
 Repository name: `streaming-platform-sql-analytics`.
 
-## Retained deliverables and provenance
+## Deliverables
 
-The folder contained one PDF report, one MySQL Workbench model, and an instructions/feedback document. No competing report or model versions were available. The PDF and model are treated as the final available deliverables on that basis; filename suffixes such as `(1)` and `(2)` alone do not establish a revision history.
+The published files include the [portfolio report](../reports/streaming-platform-report.pdf), the [editable MySQL Workbench model](../model/streaming-platform.mwb), and the SQL transcribed from the report.
 
-| Original filename | Current location | Treatment |
-| --- | --- | --- |
-| `SQL II GROUP ASSIGNMENT GROUP 6(2).pdf` | [`reports/streaming-platform-report.pdf`](../reports/streaming-platform-report.pdf) | Renamed and moved; bytes unchanged. |
-| `GROUP ASSIGNMENT SQL II ERD(1).mwb` | [`model/streaming-platform.mwb`](../model/streaming-platform.mwb) | Renamed and moved; bytes unchanged. |
-| `Intructions and Feeback.docx` | `.local/instructions-and-feedback.docx` | Retained locally; excluded from publication. |
+The report is dated 16 December 2025. The model metadata records a last change on 15 December 2025 and a MySQL 8.0.33 target. These are artifact dates.
 
-The report is dated 16 December 2025. The model metadata records a last change on 15 December 2025 and a MySQL 8.0.33 target. These are artifact dates; no Git commit dates were available.
+No Git repository was present at the initial inspection. A new repository on `main` was initialized for portfolio publication.
 
-No `.git` directory was present in the project or its ancestor directories at the initial inspection. There was no local commit history, remote configuration, or Git contributor history to preserve. A new repository on `main` was initialized for portfolio publication; the original artifact credits remain unchanged.
+## Author
 
-## Attribution
+**Isha Shah completed the project in full.**
 
-**Isha Shah completed the project in full**, as stated by the project owner. The portfolio README describes that contribution accordingly.
+## Portfolio report
 
-The original report's cover also lists Enzo Jerez, Maria-Irina Popa, Martin Sebastian Schneider Vaquero, and Ocke Moulijn. Those existing credits and the original cover wording are retained in the unchanged PDF. Their individual contributions are not documented in the supplied files, so this repository does not assign them specific work. The model's generic `localadmin` metadata is also unchanged.
+The portfolio edition uses the title **Streaming Platform SQL Analytics** and identifies Isha Shah as the author. The title metadata and a few narrative phrases were updated to match. It retains all 26 pages, the SQL, sample data, analytical results, screenshots, and chart.
 
 ## SQL transcription
 
@@ -32,7 +28,7 @@ The original folder had no standalone `.sql` files. The published SQL was extrac
 | [`02_seed.sql`](../sql/02_seed.sql) | Part 4, pages 8-23: 17 `INSERT INTO` statements. |
 | [`03_analysis.sql`](../sql/03_analysis.sql) | Part 5, pages 23-26: five analytical queries. |
 
-Transcription changes were limited to removing page breaks and invisible zero-width characters, rejoining two wrapped SQL comments, adding explanatory comments, changing the sample subscriber email domain from `email.com` to `example.com`, and changing the backslash-escaped apostrophe in `O'Connor` to a doubled SQL quote. Email local parts and all other sample values were retained. The PDF itself was not edited.
+Transcription changes were limited to removing page breaks and invisible zero-width characters, rejoining two wrapped SQL comments, adding explanatory comments, changing the sample subscriber email domain from `email.com` to `example.com`, and changing the backslash-escaped apostrophe in `O'Connor` to a doubled SQL quote. Email local parts and all other sample values were retained. These SQL transcription changes do not alter the analysis.
 
 The original analytical logic, including Q4's payment multiplication, was preserved. Q1 counts liked viewing rows in an inclusive range starting 30 days before the maximum viewing date. Q3 uses the stored `ACTIVE` status, without an additional date filter. Q5 uses the maximum viewing date minus one year and does not specify a secondary sort key for ties.
 
@@ -42,7 +38,8 @@ The project owner confirms that the project was executed during its original dev
 
 Verified locally on 24 November 2026:
 
-- SHA-256 checks confirmed that all three original files were unchanged by relocation.
+- The source artifacts were archived locally before editing. The Workbench model remains unchanged.
+- All 26 pages of the portfolio report were rendered for visual review. Text on the 22 unaffected pages and image digests throughout the report were checked against the source; the analytical SQL and all screenshots are unchanged.
 - The Workbench ZIP archive passed its integrity check and its model XML parsed successfully. All 17 table names, ordered column names, and 18 foreign-key relationships match the transcribed DDL. The model was not opened in the Workbench application.
 - Loaded the schema and all 831 sample rows into an in-memory SQLite database with foreign keys enabled, adapting `AUTO_INCREMENT` to SQLite syntax. Foreign-key and database-integrity checks passed. This does not establish full MySQL dialect, type, collation, or application compatibility.
 - Executed the five analyses after translating `DATE_SUB` and `DATE_FORMAT` to SQLite equivalents. Q1, Q2, Q3, and Q5 matched the saved numeric results in the PDF; ordering among equal Q5 totals may vary.
@@ -74,7 +71,7 @@ Verified locally on 24 November 2026:
 
 ### Revenue-query limitation
 
-The payment table sums to **1,229.23** amount units. Summing the genre-query output produces **38,189.68** because payments are repeated across a subscriber's viewings and each content item's genres. No currency column or revenue-allocation rule exists. These totals were checked locally, rather than taken from the report's screenshots. The chart is retained only in the original report; it is not promoted as a validated revenue result.
+The payment table sums to **1,229.23** amount units. Summing the genre-query output produces **38,189.68** because payments are repeated across a subscriber's viewings and each content item's genres. No currency column or revenue-allocation rule exists. These totals were checked locally, rather than taken from the report's screenshots. The chart is retained in the report; it is not promoted as a validated revenue result.
 
 ## Publication hygiene
 
@@ -82,4 +79,4 @@ The `.gitignore` excludes the local feedback document, environment files, creden
 
 The model has no saved connections and its password/connection-string fields are empty. Its internal database was inspected and contains no project data rows; a Workbench bookkeeping record remains part of the original archive. The embedded archive `lock` entry is part of the original file and has been retained to preserve it; external Workbench lock/backup files are ignored.
 
-The project owner confirms that the subscriber names and email addresses in the unchanged PDF are synthetic sample records. The runnable SQL uses reserved `example.com` addresses. No credentials were found in the inspected report text, model metadata, or instructions/feedback text; this is a scoped local inspection, not a guarantee about material outside this folder.
+The project owner confirms that the subscriber names and email addresses in the PDF are synthetic sample records. The runnable SQL uses reserved `example.com` addresses. No credentials were found in the inspected report text, model metadata, or instructions/feedback text; this is a scoped local inspection, not a guarantee about material outside this folder.

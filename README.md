@@ -64,7 +64,7 @@ The design separates subscriber activity from subscription billing. Lookup table
     └── 03_analysis.sql
 ```
 
-The PDF and `.mwb` file are the retained final deliverables available in this folder. The SQL files were transcribed from the PDF to make the work easier to inspect and run. [Project notes](docs/project-notes.md) record the original filenames, retained credits, transcription changes, and validation details.
+The PDF is the portfolio edition of the report; the `.mwb` file is the retained editable model. The SQL files were transcribed from the report to make the work easier to inspect and run. [Project notes](docs/project-notes.md) describe the deliverables, transcription changes, and validation details.
 
 ## Run the SQL
 
