@@ -1,0 +1,54 @@
+# Private source context and local publication checklist
+/.local/
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+.my.cnf
+.mylogin.cnf
+.aws/
+.ssh/
+credentials/
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# OS and editor files
+.DS_Store
+._*
+.AppleDouble/
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Workbench backups and locks; retain the published .mwb model
+*.mwb.bak
+*.mwb.bak.*
+*.mwbd
+*.mwb.lock
+
+# Local databases, exports, caches, and generated work
+*.db
+*.sqlite
+*.sqlite3
+*.sql.gz
+*.dump
+*.log
+*.tmp
+*.temp
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.cache/
+/tmp/
+/build/
+/dist/
+/output/
+/backups/
